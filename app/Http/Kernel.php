@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         // 根据之前设置的路由规则名（admin）对应添加admin类名，并指向路由验证路径
         'admin' => \App\Http\Middleware\VerifyAdmin::class,
+        'admin.auth' => \App\Http\Middleware\AdminAuth::class,
     ];
 }

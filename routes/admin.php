@@ -11,5 +11,8 @@
 |
 */
 
-Route::get('test', 'IndexController@index');
+Route::group(['middleware'=>'admin.auth'],function ($router){
+    Route::get('index', 'IndexController@index');
+    Route::get('login', 'LoginController@login')->name('admin.login');
+});
 

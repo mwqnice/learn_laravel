@@ -13,12 +13,18 @@
 
 Route::group(['middleware'=>'admin'],function($route){
 	
-	Route::get('login', 'LoginController@login')->name('admin.login');
+	Route::get('login', 'AdminController@login')->name('admin.login');
+
+    Route::get('index', 'IndexController@index')->name('admin.index');
+
+    Route::get('user', 'UserController@index')->name('admin.user');
+
+    Route::get('addUser', 'UserController@addUser')->name('admin.addUser');
 	
 	/**需要登录认证模块**/
-    Route::middleware(['middleware'=>'admin.auth'])->group(function (){
-    	Route::get('index', 'IndexController@index');
-    });
+//    Route::middleware(['middleware'=>'admin.auth'])->group(function (){
+//    	Route::get('index', 'IndexController@index');
+//    });
 });
 
 

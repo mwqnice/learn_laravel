@@ -38,13 +38,14 @@
                      placeholder="登录账号" maxlength="80">
             </div>
             <div class="form-group">
-              <label>是否置顶
+              <label>角色
                 <small class="text-red">*</small>
               </label>
               <select class="js-example-placeholder-single form-control">
-                <option value=""></option>
-                <option value="1">是</option>
-                <option value="2">否</option>
+                <option value="">请选择角色</option>
+                @foreach($data['roleList'] as $value)
+                  <option value="{{$value->id}}">{{$value->role_name}}</option>
+                @endforeach
               </select>
             </div>
           </div>
